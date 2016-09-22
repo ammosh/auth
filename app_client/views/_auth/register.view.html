@@ -1,0 +1,46 @@
+<div layout-xs="column" layout="row" layout-align="center center">
+  <div flex-xs flex-gt-xs="40" layout="column" class="md-body-1">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Account Info</span>
+          <span class="md-subhead">Tell us a little about you.</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+      <md-card-content>
+        <form name="userForm ">
+          <div layout="column">
+            <md-input-container>
+              <label>Name</label>
+              <input required type="text" name="userName" ng-model="vm.user._name" minlength="2" maxlength="100" />
+
+              <div ng-messages="userForm.userName.$error" role="alert">
+                <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                  Your name is required.
+                </div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Email</label>
+              <input required type="email" name="userEmail" ng-model="vm.user._email" minlength="6" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+              <div ng-messages="userForm.userEmail.$error" role="alert">
+                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                  Please enter a valid email.
+                </div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+              <input type="password">
+            </md-input-container>
+            <md-checkbox ng-model="vm.user._password" aria-label="Instructor?">
+              As an instructor?
+            </md-checkbox>
+            <md-button class="md-raised md-primary">Register</md-button>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

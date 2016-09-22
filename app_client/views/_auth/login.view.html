@@ -1,0 +1,34 @@
+<div layout-xs="column" layout="row" layout-align="center center">
+  <div flex-xs flex-gt-xs="40" layout="column" class="md-body-1">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Access Point</span>
+          <span class="md-subhead">Please enter your credentials.</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+      <md-card-content>
+        <form name="userForm ">
+          <div layout="column">
+            <md-input-container>
+              <label>Email</label>
+              <input required type="email" name="userEmail" ng-model="vm.user._email" minlength="6" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+              <div ng-messages="userForm.userEmail.$error" role="alert">
+                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                  Please enter a valid email.
+                </div>
+              </div>
+            </md-input-container>
+
+            <md-input-container>
+              <label>Password</label>
+              <input type="password">
+            </md-input-container>
+            <md-button class="md-raised md-primary">Signin</md-button>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

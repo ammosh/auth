@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="fitforlife">
+
+<head>
+  <base href="/">
+  <title>Fit 4 Life</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="css/angular-material.min.css">
+  <link rel="stylesheet" href="css/angular-material-icons.css">
+  <link rel="stylesheet" href="css/ladda-themeless.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body ng-cloak>
+  <md-content>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="svg/ic_face_24px.svg"></md-icon>
+        </md-button>
+        <h2>
+            <span>Fit4Life</span>
+          </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="svg/ic_more_vert_24px.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <div class="wrapper">
+      <div ng-view>
+
+      </div>
+    </div>
+  </md-content>
+
+  <script src="js/ng/angular.min.js"></script>
+  <script src="js/ng/angular-animate.min.js"></script>
+  <script src="js/ng/angular-route.min.js"></script>
+  <script src="js/ng/angular-aria.min.js"></script>
+  <script src="js/ng/angular-messages.min.js"></script>
+  <script src="js/ng/angular-material.min.js"></script>
+  <script src="js/ng/angular-material-icons.min.js"></script>
+  <script src="js/src/spin.min.js"></script>
+  <script src="js/src/ladda.min.js"></script>
+  <script src="js/ng/angular-ladda.min.js"></script>
+
+  <script src="app.min.js"></script>
+
+</body>
+
+</html>
