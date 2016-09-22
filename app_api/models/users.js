@@ -26,8 +26,14 @@ var userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  hash: String,
-  salt: String
+  hash: {
+    type: String,
+    required: true
+  },
+  salt: {
+    type: String,
+    required: true
+  }
 });
 
 userSchema.methods.setPassword = function(password) {

@@ -12,6 +12,7 @@
     "express": "*",
     "express-jwt": "*",
     "jsonwebtoken": "*",
+    "less-middleware": "*",
     "mongoose": "*",
     "morgan": "*",
     "passport": "*",

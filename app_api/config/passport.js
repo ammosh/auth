@@ -9,7 +9,7 @@ passport.use(new LocalStrategy({
   },
   function(username, password, done) {
     User.findOne({
-      email: username
+      _email: username
     }, function(err, user) {
       if (err) {
         return done(err);

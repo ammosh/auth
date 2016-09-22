@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var lessMiddleware = require('less-middleware');
 
 require('./app_api/models/mongo');
 require('./app_api/config/passport');
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
 app.use(passport.initialize());
@@ -35,10 +37,10 @@ app.use(function(req, res) {
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
 });
 
-// TODO - remoce the error for production
+// TODO - remove the error for production
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
+  res.status(err.status || 400);
+  return res.json({
     message: err.message,
     error: err
   });
