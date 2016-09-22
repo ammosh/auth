@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = process.env.MONGOLAB_URI ? process.env.MONGOLAB_URI : 'mongodb://localhost:27017/fit4life';
+var dbURI = process.env.MONGOLAB_URI ? process.env.MONGODB_URI : 'mongodb://localhost:27017/fit4life';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function() {
