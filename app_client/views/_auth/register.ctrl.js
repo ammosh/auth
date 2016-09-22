@@ -23,6 +23,12 @@
             message: response.data.message,
             title: response.statusText
           });
+          var dialog = document.querySelector('dialog');
+          dialog.showModal();
+          dialog.querySelector('.close-modal').addEventListener('click', function() {
+            dialog.close();            
+          });
+
         }).catch(function(err) {
           console.log(err);
           notify.error({

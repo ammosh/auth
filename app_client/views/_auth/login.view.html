@@ -7,16 +7,14 @@
         </div>
         <div class="mdl-card__supporting-text">
           please enter you email and password to get access.
-          <form action="#" class="text-center">
+          <form id="loginForm" action="#" class="text-center">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" id="userEmail" type="email" ng-model="vm.auth._email">
               <label class="mdl-textfield__label" for="userEmail">Email</label>
-              <span class="mdl-textfield__error">please enter a valid email</span>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" id="userPassword" type="password" pattern=".{6,}" ng-model="vm.auth._password">
               <label class="mdl-textfield__label" for="userPassword">Passowrd</label>
-              <span class="mdl-textfield__error">password length should be greater than 6</span>
             </div>
           </form>
         </div>
