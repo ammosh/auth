@@ -3,9 +3,9 @@
     .module('fitforlife')
     .controller('loginCtrl', loginCtrl);
 
-  loginCtrl.$inject = ['$scope', '$location', '$timeout', 'authService', 'Notification'];
+  loginCtrl.$inject = ['$scope', '$location', '$localStorage', '$timeout', 'authService', 'Notification'];
 
-  function loginCtrl($scope, $location, $timeout, authService, notify) {
+  function loginCtrl($scope, $location, $localStorage, $timeout, authService, notify) {
     var vm = this;
     vm.auth = {
       _email: '',
@@ -20,10 +20,10 @@
             message: response.data.message,
             title: response.statusText
           });
+          authService.saveToken(response.data.token);
           $timeout(function() {
             $location.path('feed');
           }, 500);
-
         }).catch(function(err) {
           notify.error({
             message: err.data.message,

@@ -1,4 +1,4 @@
-angular.module('fitforlife', ['ngRoute', 'ngMessages', 'angular-ladda', 'ui-notification']);
+angular.module('fitforlife', ['ngRoute', 'ngMessages', 'angular-ladda', 'ui-notification', 'ngStorage']);
 
 function config($routeProvider, $locationProvider, NotificationProvider) {
   NotificationProvider.setOptions({
@@ -10,6 +10,7 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
     positionX: 'center',
     positionY: 'bottom'
   });
+
   $routeProvider
     .when('/register', {
       templateUrl: 'views/_auth/register.view.html',
@@ -23,6 +24,10 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
       templateUrl: 'views/_home/home.view.html',
       controller: 'homeCtrl',
       controllerAs: 'vm'
+    }).when('/feeds', {
+      templateUrl: 'views/_feeds/feeds.view.html',
+      controller: 'feedsCtrl',
+      controllerAs: 'vm'
     })
     .otherwise({
       redirectTo: '/home'
@@ -32,7 +37,7 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
   $locationProvider.html5Mode(true);
 }
 
-function run($rootScope, $location, $timeout) {
+function run($rootScope, $location, $timeout, authService) {
   $rootScope.$on('$viewContentLoaded', function() {
     $timeout(function() {
       componentHandler.upgradeAllRegistered();
@@ -40,8 +45,16 @@ function run($rootScope, $location, $timeout) {
   });
   $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
     console.log("redirect to: " + $location.path());
+    if (authService.isLoggedIn()) { // check if user is logged in
+      // user is logged in
+      console.log("logged in");
+    } else {
+      if (($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/')) {
+        $location.path('/');
+      }
+    }
   });
 }
 
 angular.module('fitforlife').config(['$routeProvider', '$locationProvider', 'NotificationProvider', config])
-  .run(['$rootScope', '$location', '$timeout', run]);
+  .run(['$rootScope', '$location', '$timeout', 'authService', run]);
