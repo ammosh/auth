@@ -37,7 +37,7 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
       redirectTo: '/home'
     });
 
-  // use the HTML5 History API
+  // use the HTML5 history API
   $locationProvider.html5Mode(true);
 }
 
@@ -47,8 +47,8 @@ function run($rootScope, $location, $timeout, authService) {
     if (authService.isLoggedIn()) { // check if user is logged in
       // user is logged in
     } else {
-      if ($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/' && $location.path() != '/home') {
-        $location.path('/');
+      if (($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/home')) {
+        $location.path('/home');
       }
     }
   });
@@ -63,7 +63,7 @@ angular.module('fitforlife').config(['$routeProvider', '$locationProvider', 'Not
 $.validator.setDefaults({
   highlight: function(element) {
     $(element).closest('.form-group').removeClass('has-success').addClass('has-error')
-    // $(element).parent().find('.form-control-feedback').removeClass('fa-check').addClass('fa-remove');
+      // $(element).parent().find('.form-control-feedback').removeClass('fa-check').addClass('fa-remove');
   },
   unhighlight: function(element) {
     $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
