@@ -47,8 +47,8 @@ function run($rootScope, $location, $timeout, authService) {
     if (authService.isLoggedIn()) { // check if user is logged in
       // user is logged in
     } else {
-      if (($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/')) {
-        $location.path('/');
+      if ($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/' && $location.path() != '/home')) {
+        $location.path('/home');
       }
     }
   });
