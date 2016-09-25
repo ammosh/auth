@@ -21,20 +21,16 @@
     };
 
     var getToken = function() {
-      console.log($localStorage.fitforlife_token);
       return $localStorage.fitforlife_token;
     };
 
     var isLoggedIn = function() {
       var token = getToken();
-      console.log(token);
       var payload;
       if (token) {
         payload = token.split('.')[1];
         payload = $window.atob(payload);
         payload = JSON.parse(payload);
-        console.log(payload);
-        console.log(payload.exp > Date.now() / 1000);
         return payload.exp > Date.now() / 1000;
       } else {
         return false;
@@ -48,14 +44,14 @@
         payload = $window.atob(payload);
         payload = JSON.parse(payload);
         return {
-          email: payload._email,
-          name: payload._name
+          _email: payload._email,
+          _name: payload._name
         };
       }
     };
 
     logout = function() {
-      $localstorage.remove('fitforlife-token');
+      $localStorage.fitforlife_token = null;
     };
 
 

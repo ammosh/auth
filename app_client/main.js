@@ -1,4 +1,4 @@
-angular.module('fitforlife', ['ngRoute', 'ngMessages', 'angular-ladda', 'ui-notification', 'ngStorage']);
+angular.module('fitforlife', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ui.bootstrap', 'ngMessages', 'angular-ladda', 'ui-notification', 'ngStorage']);
 
 function config($routeProvider, $locationProvider, NotificationProvider) {
   NotificationProvider.setOptions({
@@ -7,7 +7,7 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
     startRight: 10,
     verticalSpacing: 20,
     horizontalSpacing: 20,
-    positionX: 'center',
+    positionX: 'right',
     positionY: 'bottom'
   });
 
@@ -28,6 +28,10 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
       templateUrl: 'views/_feeds/feeds.view.html',
       controller: 'feedsCtrl',
       controllerAs: 'vm'
+    }).when('/profile', {
+      templateUrl: 'views/_profile/profile.view.html',
+      controller: 'profileCtrl',
+      controllerAs: 'vm'
     })
     .otherwise({
       redirectTo: '/home'
@@ -38,16 +42,10 @@ function config($routeProvider, $locationProvider, NotificationProvider) {
 }
 
 function run($rootScope, $location, $timeout, authService) {
-  $rootScope.$on('$viewContentLoaded', function() {
-    $timeout(function() {
-      componentHandler.upgradeAllRegistered();
-    });
-  });
   $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
     console.log("redirect to: " + $location.path());
     if (authService.isLoggedIn()) { // check if user is logged in
       // user is logged in
-      console.log("logged in");
     } else {
       if (($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/')) {
         $location.path('/');
@@ -58,3 +56,25 @@ function run($rootScope, $location, $timeout, authService) {
 
 angular.module('fitforlife').config(['$routeProvider', '$locationProvider', 'NotificationProvider', config])
   .run(['$rootScope', '$location', '$timeout', 'authService', run]);
+
+
+
+
+$.validator.setDefaults({
+  highlight: function(element) {
+    $(element).closest('.form-group').removeClass('has-success').addClass('has-error')
+    // $(element).parent().find('.form-control-feedback').removeClass('fa-check').addClass('fa-remove');
+  },
+  unhighlight: function(element) {
+    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+    // $(element).parent().find('.form-control-feedback').removeClass('fa-remove').addClass('fa-check');
+  },
+  errorClass: 'error',
+  errorPlacement: function(error, element) {
+    if (element.parent('.input-group').length) {
+      error.insertAfter(element.parent());
+    } else {
+      error.insertAfter($(element).parent().find('.form-control-feedback'));
+    }
+  }
+});

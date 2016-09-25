@@ -1,68 +1,55 @@
 body {
   background-color: #f9f9f9;
 }
-.mdl-card__actions.mdl-card--border {
-  border-top: 1px solid #ff9800;
+.btn-nb {
+  box-shadow: none;
 }
-.mdl-textfield {
-  font-weight: normal;
+.profile-pic {
+  border-radius: 50%;
 }
-.welcome-card-wide>.mdl-card__title {
-  color: #fff;
-  height: 300px;
-  background-size: 100% 100%;
-  background: url('../../img/welocme-back.png') center / cover
+.padding {
+  padding: 20px;
 }
-.welcome-card-wide>.mdl-card__menu {
-  color: #fff
+.margin {
+  margin: 20px;
 }
-.glyphicon-refresh-animate {
-  -animation: spin .7s infinite linear;
-  -webkit-animation: spin2 .7s infinite linear
+img-centered {
+  margin: 0 auto;
 }
-@-webkit-keyframes spin2 {
-  from {
-    -webkit-transform: rotate(0deg)
-  }
-  to {
-    -webkit-transform: rotate(360deg)
-  }
+header {
+  text-align: center;
+  background: transparent;
+  color: #7d7e7f;
 }
-@keyframes spin {
-  from {
-    transform: scale(1) rotate(0deg)
-  }
-  to {
-    transform: scale(1) rotate(360deg)
-  }
+header .container {
+  padding-top: 40px;
+  padding-bottom: 50px;
 }
-.feed-card-square.mdl-card {
-  height: 440px
+header img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+  height: 200px;
 }
-.feed-card-square>.mdl-card__title {
-  color: #fff;
-  background-size: 100%;
+header .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
 }
-.split {
-  margin-top: 20px;
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
 }
-.fixed-feed-bar {
-  position: fixed;
-  top: 74px;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 100px;
-  background-color: #f9f9f9;
+section {
+  display: block;
+  padding: 100px 0;
 }
-@media (max-width: 768px) {
-  .fixed-feed-bar {
-    position: fixed;
-    top: 66px;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 100px;
-    background-color: #f9f9f9;
-  }
+section .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
 }

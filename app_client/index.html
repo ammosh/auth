@@ -3,64 +3,35 @@
 
 <head>
   <base href="/">
-  <title>Fit 4 Life</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <title>FitStram</title>
   <link rel="stylesheet" href="css/ladda-themeless.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="css/less/bootstrap.css">
-  <link rel="stylesheet" href="css/customized.css">
   <link rel="stylesheet" href="css/angular-ui-notification.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/simple-line-icons.css">  
+  <link rel="stylesheet" href="css/cropper.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:url" content="http://fit4life.heroku.com" />
+  <meta property="og:url" content="http://fitstram.heroku.com" />
   <meta property="og:type" content="virtual trainer" />
-  <meta property="og:title" content="vFit - get together get fit." />
+  <meta property="og:title" content="FitStram - get together get fit." />
   <meta property="og:description" content="A guider for you to get you motivated and fit." />
-  <meta property="og:image" content="http://fit4life.heroku.com/img/welcome-back.png" />
+  <meta property="og:image" content="http://fitstram.heroku.com/img/welcome-back.png" />
 </head>
 
 
 <body>
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="/"><img src="img/logo.png" height="60" width="60" style="margin-top:5px;" alt="virtual fit" /></a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <form action="#">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-                  <i class="material-icons">search</i>
-                </label>
-                <div class="mdl-textfield__expandable-holder">
-                  <input class="mdl-textfield__input" type="text" id="sample6" placeholder="search..." style="font-size: 12px; font-weight: normal;">
-                </div>
-              </div>
-            </form>
-          </li>
-          <li><a href="register"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
-          <li><a href="login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container" style="margin-top:120px;">
+  <div class="container-fluid" style="margin-top:120px;">
+    <navigation></navigation>
     <div ng-view>
 
     </div>
   </div>
   <script src="js/src/jquery-3.1.0.min.js"></script>
   <script src="js/ng/angular.min.js"></script>
+  <script src="js/ng/angular-sanitize.min.js"></script>
   <script src="js/ng/angular-animate.min.js"></script>
+  <script src="js/ng/angular-touch.min.js"></script>
+  <script src="js/ng/ui-bootstrap-tpls.min.js"></script>
   <script src="js/ng/angular-route.min.js"></script>
   <script src="js/ng/angular-aria.min.js"></script>
   <script src="js/ng/angular-messages.min.js"></script>
@@ -70,7 +41,8 @@
   <script src="js/ng/angular-ladda.min.js"></script>
   <script src="js/ng/angular-ui-notification.min.js"></script>
   <script src="js/ng/ngStorage.min.js"></script>
-
+  <script src="js/src/jquery.validate.min.js"></script>
+  <script src="js/src/cropper.min.js"></script>
 
   <script src="app.min.js"></script>
 </body>

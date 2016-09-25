@@ -18,6 +18,10 @@ var userSchema = new mongoose.Schema({
       type: String
     }
   },
+  _instructor : {
+    type: Boolean,
+    default: false
+  },
   _reg_date: {
     type: Date,
     default: Date.now

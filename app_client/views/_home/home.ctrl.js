@@ -1,9 +1,9 @@
 (function() {
   angular
     .module('fitforlife')
-    .controller('homeCtrl', loginCtrl);
+    .controller('homeCtrl', homeCtrl);
 
-  function loginCtrl() {
+  function homeCtrl() {
 
   }
 })();

@@ -14,6 +14,7 @@ module.exports.register = function(req, res, next) {
 
   var user = new User();
   user._email = req.body._email;
+  user._instructor = req.body._instructor == true ? true: false;
   user._update_date = new Date();
   user._reg_date = new Date();
 

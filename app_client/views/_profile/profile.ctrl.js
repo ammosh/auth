@@ -1,11 +1,11 @@
 (function() {
   angular
     .module('fitforlife')
-    .controller('registerCtrl', registerCtrl);
+    .controller('profileCtrl', profileCtrl);
 
-  registerCtrl.$inject = ['$scope', '$location', '$uibModal', 'authService', 'Notification'];
+  profileCtrl.$inject = ['$scope', '$location', '$uibModal', 'authService', 'Notification'];
 
-  function registerCtrl($scope, $location, $uibModal, authService, notify) {
+  function profileCtrl($scope, $location, $uibModal, authService, notify) {
     var vm = this;
     vm.user = {
       _name: '',

@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <button type="button" ng-click="vmd.close('cancel')" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h4 class="modal-title">{{vmd.info._title}}</h4>
+</div>
+<div class="modal-body">
+  <p>
+    {{vmd.info._message}}
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="vmd.close('cancel')" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary" ng-click="vmd.close('ok')">{{vmd.info._confirm_label ? vmd.info._confirm_label : 'OK'}}</button>
+</div>

@@ -7,7 +7,7 @@
 //
 // Restyle and baseline non-control form elements.
 
-.btw-form fieldset {
+fieldset {
   padding: 0;
   margin: 0;
   border: 0;
@@ -17,7 +17,7 @@
   min-width: 0;
 }
 
-.btw-form legend {
+legend {
   display: block;
   width: 100%;
   padding: 0;
@@ -29,7 +29,7 @@
   border-bottom: 1px solid @legend-border-color;
 }
 
-.btw-form label {
+label {
   display: inline-block;
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
@@ -44,43 +44,43 @@
 // address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
-.btw-form input[type="search"] {
+input[type="search"] {
   .box-sizing(border-box);
 }
 
 // Position radios and checkboxes better
-.btw-form input[type="radio"],
-.btw-form input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9; // IE8-9
   line-height: normal;
 }
 
-.btw-form input[type="file"] {
+input[type="file"] {
   display: block;
 }
 
 // Make range inputs behave like textual form controls
-.btw-form input[type="range"] {
+input[type="range"] {
   display: block;
   width: 100%;
 }
 
 // Make multiple select elements height not fixed
-.btw-form select[multiple],
-.btw-form select[size] {
+select[multiple],
+select[size] {
   height: auto;
 }
 
 // Focus for file, radio, and checkbox
-.btw-form input[type="file"]:focus,
-.btw-form input[type="radio"]:focus,
-.btw-form input[type="checkbox"]:focus {
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
   .tab-focus();
 }
 
 // Adjust output element
-.btw-form output {
+output {
   display: block;
   padding-top: (@padding-base-vertical + 1);
   font-size: @font-size-base;
@@ -169,7 +169,7 @@
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
-.btw-form input[type="search"] {
+input[type="search"] {
   -webkit-appearance: none;
 }
 
@@ -184,10 +184,10 @@
 // Note that as of 9.3, iOS doesn't support `week`.
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .btw-form input[type="date"],
-  .btw-form input[type="time"],
-  .btw-form input[type="datetime-local"],
-  .btw-form input[type="month"] {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
     &.form-control {
       line-height: @input-height-base;
     }
@@ -269,8 +269,8 @@
 // Some special care is needed because <label>s don't inherit their parent's `cursor`.
 //
 // Note: Neither radios nor checkboxes can be readonly.
-.btw-form input[type="radio"],
-.btw-form input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   &[disabled],
   &.disabled,
   fieldset[disabled] & {
@@ -399,7 +399,7 @@
 // Feedback icon (requires .glyphicon classes)
 .form-control-feedback {
   position: absolute;
-  top: 0;
+  top: 15px;
   right: 0;
   z-index: 2; // Ensure icon is above input groups
   display: block;
