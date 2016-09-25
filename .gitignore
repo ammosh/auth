@@ -1,2 +1,4 @@
 node_modules
 bower_components
+/app_client/app.min.js.map
+/app_client/app.min.js
