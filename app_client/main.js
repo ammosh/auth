@@ -48,7 +48,7 @@ function run($rootScope, $location, $timeout, authService) {
       // user is logged in
     } else {
       if ($location.path() != '/login' && $location.path() != '/register' && $location.path() != '/' && $location.path() != '/home') {
-        $location.path('/home');
+        $location.path('/');
       }
     }
   });
