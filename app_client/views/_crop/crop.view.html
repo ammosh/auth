@@ -1,0 +1,15 @@
+<div class="modal-header well">
+  <button type="button" ng-click="vmd.close('cancel')" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h4 class="modal-title">Edit Image</h4>
+</div>
+<div class="modal-body">
+  <p>
+    <div>
+      <canvas id="imageCanvas" style="display: block; margin: 2px; width: 100%;background-color: #fff;"></canvas>
+    </div>
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="vmd.close('cancel')" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary" ng-disabled="vm.selection" ng-click="vmd.close('ok')">Done</button>
+</div>
