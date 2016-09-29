@@ -53,3 +53,11 @@ section .intro-text .name {
   font-weight: 700;
   font-size: 2em;
 }
+
+.navbar-nav > li > a{
+   padding-top: 50px;
+}
+
+.navbar-form{
+   padding-top: 22px;
+}

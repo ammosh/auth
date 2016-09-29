@@ -9,13 +9,12 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 server.on('connection', function(socket) {
   console.log('a new client is connected.');
   socket.setTimeout(5000); // keep alive for 5 seconds
-}).listen(3000);
+}).listen(port);
 
 
 function normalizePort(val) {
@@ -40,6 +39,6 @@ function onListening() {
   var bind = typeof addr === 'string' ?
     'pipe ' + addr :
     'port ' + addr.port;
-  debug('Listening on ' + bind);
+  // debug('Listening on ' + bind);
   console.log('server is running on port:' + port);
 }
