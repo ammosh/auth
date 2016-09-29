@@ -56,8 +56,5 @@ section .intro-text .name {
 
 .navbar-nav > li > a{
    padding-top: 50px;
-}
-
-.navbar-form{
-   padding-top: 22px;
+   font-size: 18px;
 }
