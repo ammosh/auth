@@ -1,2 +1,2 @@
-# fitforlife
-A simple application for personal trainers and also clients to keep in touch 
+# Auth
+A simple starter application for big ideas. This application implements a basic authentication system + included the bootstrap less for more customization.  
